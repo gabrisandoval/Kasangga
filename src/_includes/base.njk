@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/assets/kasangga.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | Kasangga</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Kasangga<span> Centro servizi</span></a>
+    <ul>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+
+  {{ content | safe }}
+
+  <footer>
+    <p>&copy; 2025 <strong>Kasangga</strong> — Tutti i diritti riservati.</p>
+  </footer>
+
+</body>
+</html>

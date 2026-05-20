@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+
+<article class="post-page">
+
+  <header class="post-header">
+    <a href="/#news" class="post-back">← Torna alle News</a>
+    {% if tag %}<span class="news-tag">{{ tag }}</span>{% endif %}
+    <h1>{{ title }}</h1>
+    {% if date %}
+    <time class="post-date">{{ date | date("d MMMM yyyy") }}</time>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+
+</article>

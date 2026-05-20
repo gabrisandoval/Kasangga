@@ -1,0 +1,144 @@
+---
+layout: base.njk
+title: Home
+---
+
+  <!-- HOME -->
+  <section id="home">
+    <a href="#servizi" class="btn-hero">Scopri i nostri servizi</a>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi">
+    <div class="section-header">
+      <h2>I nostri servizi</h2>
+      <p>Scegli la categoria di cui hai bisogno e affidati ai nostri esperti.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        </div>
+        <h3>Fisco / Dichiarazioni</h3>
+        <ul>
+          <li>Modello 730</li>
+          <li>Modello Redditi</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3>Famiglia</h3>
+        <ul>
+          <li>Assistenza familiare</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        </div>
+        <h3>Modelli INPS</h3>
+        <ul>
+          <li>ISEE</li>
+          <li>Bonus sociali</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 11c-5.33 0-8 2.67-8 4v1h16v-1c0-1.33-2.67-4-8-4z"/></svg>
+        </div>
+        <h3>Altro</h3>
+        <ul>
+          <li>SPID</li>
+          <li>Cittadinanza</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="section-header">
+      <h2>News</h2>
+      <p>Aggiornamenti fiscali e novità burocratiche che ti riguardano.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="news-grid">
+      {% for post in collections.posts | reverse %}
+      <a href="{{ post.url }}" class="news-card">
+        {% if post.data.latest %}<span class="news-badge">Ultima notizia</span>{% endif %}
+        <div class="news-img">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+        </div>
+        <div class="news-body">
+          {% if post.data.tag %}<span class="news-tag">{{ post.data.tag }}</span>{% endif %}
+          <h4>{{ post.data.title }}</h4>
+          {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="news-footer">
+      <a href="/news/" class="news-all-link">Tutte le news →</a>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="section-header">
+      <h2>Contatti</h2>
+      <p>Siamo qui per aiutarti. Scrivici o vieni a trovarci.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+          </div>
+          <div>
+            <h4>Indirizzo</h4>
+            <p>Via Roma 1, 00100 Roma (RM)</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <h4>Telefono</h4>
+            <p>+39 06 1234567</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>info@kasangga.it</p>
+          </div>
+        </div>
+      </div>
+
+      <form onsubmit="return false;">
+        <input type="text"  placeholder="Nome e Cognome" required />
+        <input type="email" placeholder="Email" required />
+        <input type="text"  placeholder="Oggetto" />
+        <textarea placeholder="Il tuo messaggio…"></textarea>
+        <button type="submit">Invia messaggio</button>
+      </form>
+    </div>
+  </section>
