@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+
+<div class="service-page">
+
+  <div class="service-page-header">
+    <a href="/#servizi" class="post-back">← Torna ai servizi</a>
+    <span class="news-tag">{{ categoria }}</span>
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="doc-grid">
+    {% for sezione in sezioni %}
+    <div class="doc-card">
+      <h3>{{ sezione.titolo }}</h3>
+      <ul>
+        {% for voce in sezione.voci %}
+        <li>{{ voce }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if content %}
+  <div class="post-content">{{ content | safe }}</div>
+  {% endif %}
+
+  <div class="service-page-cta">
+    <p>{{ cta }}</p>
+    <a href="/#contatti" class="btn-hero">Contattaci</a>
+  </div>
+
+</div>

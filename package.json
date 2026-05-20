@@ -4,7 +4,8 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "new-post": "node scripts/new-post.mjs"
+    "new-post": "node scripts/new-post.mjs",
+    "new-servizio": "node scripts/new-servizio.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
